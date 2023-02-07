@@ -15,10 +15,6 @@ def isPointInRegion(x, y):
 side = int(input('Введите сторону квадрата: '))
 
 
-
-
-
-
 for point in points:
     point['inRegion'] = isPointInRegion(point['x'], point['y'])
 

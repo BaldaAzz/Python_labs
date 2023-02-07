@@ -27,18 +27,21 @@ radius = 5
 
 x0, y0 = 3, -2
 
-for i in points:
+# Случай А (квадрат)
+for i in points:      
     i['inRegion'] = isPointInRegion(i['x'], i['y'], lenth_square)
 
 show_dict(points)
 print()
 
+# Случай Б(круг с центром в точке 0)
 for i in points:
     i['inRegion'] = isPointInRegion(i['x'], i['y'], radius, figure='circle')
 
 show_dict(points)
 print()
 
+# Случай В(круг с произвольным центром)
 for i in points:
     i['inRegion'] = isPointInRegion(i['x'], i['y'], radius, x0, y0, figure='circle')
 
