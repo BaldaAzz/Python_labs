@@ -61,4 +61,3 @@ while key != 5:
         print('\n'*10)
         print(f'Операции ({key}) не существует')
         
-#sfsdfsd
