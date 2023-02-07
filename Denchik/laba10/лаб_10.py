@@ -10,7 +10,7 @@
 # for i in s:
 #     if i.isdigit():
 #         a.append(int(i))
-# a.sort()
+##a.sort()
 # print(a)
 # with open('example1.txt', 'w') as file:
 #     for i in range(len(a)):
