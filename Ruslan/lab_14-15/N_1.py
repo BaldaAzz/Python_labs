@@ -24,7 +24,7 @@ class Vegetable:
 
 
 
-# Tomato = Vegetable(0)
+# Tomato = Vegetable(0)                             # Проверка класса
 # print(Tomato.is_ripe())
 # for i in range(3):
 #     Tomato.grow() 
@@ -47,12 +47,12 @@ class Tomato(Vegetable):
         return self.variety
 
 
-tomato = Tomato(0, 'Sort//')
-print(tomato.is_ripe())
-for i in range(3):
-    tomato.grow() 
-    print(tomato.is_ripe())
-print(tomato.give_variety())
+# tomato = Tomato(0, 'Sort//')                             # Проверка класса
+# print(tomato.is_ripe())               
+# for i in range(3):
+#     tomato.grow() 
+#     print(tomato.is_ripe())
+# print(tomato.give_variety())
 
 
 class TomatoBush:
