@@ -12,5 +12,3 @@ for key in dict_words:
         words.add(key)
 
 print(sorted(words)[0])
-
-# sss
