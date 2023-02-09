@@ -58,9 +58,9 @@ class TomatoBush:
         self.number_of_tomatoes = number_of_tomatoes                                        # Выбирает случайный сорт томата
         self.variety = variety
         self.tomatoes = [Tomato(i, self.variety) for i in range(self.number_of_tomatoes)]
-        
 
-    def grow_all(self):
+
+    def grow_all(self):                     # Рост томатов
         for i in self.tomatoes:
             i.grow()
 
@@ -73,7 +73,7 @@ class TomatoBush:
         return result
 
 
-    def give_away_all(self):
+    def give_away_all(self):                    # Сбор урожая
         if TomatoBush.all_are_ripe(self):
             return self.tomatoes
 
@@ -94,11 +94,11 @@ class Gardener:
         self.basket = []
 
 
-    def work(self):
+    def work(self):                                                 # Ухаживание за растением
         self._plant.grow_all()
 
 
-    def harvest(self):
+    def harvest(self):                                              # Сбор урожая
         tomatoes = self._plant.give_away_all()
         if tomatoes:
             print('Урожай успешно собран!')
@@ -115,6 +115,8 @@ class Gardener:
 Чтобы томаты созрели, за ними нужно ухаживать(work())
 Когда томаты созрели, их нужно собрать(harvest())
 Посмотреть, чтобы узнать сорт собранных томатов(get_variety_info())''')
+
+
 
 
 # Тест программы 
