@@ -11,4 +11,12 @@ class Worker:
     def assign_position(self):
         if 'Иван' in self.lastname:
             self.post = 'инженер'
-            
+
+
+names = {'Иван': [], 'Принц Чарльз Кинг Чихуахуа', 'Игорь', 'Tom'}
+gardeners = []
+for i in names:
+    gardeners = [Worker()]
+worker = Worker('Llls', 'adasd', 1526)
+worker.increase_salary()
+print(worker.salary)

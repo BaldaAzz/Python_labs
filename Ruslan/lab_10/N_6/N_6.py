@@ -1,6 +1,3 @@
-def counting(word):    
-    print(word, data.count(word))
-
 subjects = ('ИПО (лаба)',
             'ИПО (лекция)',
             'ОАИП (лаба)',
@@ -12,10 +9,9 @@ subjects = ('ИПО (лаба)',
             'Аловт (лекция)',
             'Матмод (практическая)')
 
-input_file = open(r'C:\Users\Кардан\Desktop\Лабараторные\ИПО\1 семестр\lab_10\N_6\input.txt', 'r')
-data = input_file.read()
+data = ''
+with open('input.txt', 'r', encoding='utf-8') as file:
+    data = file.read()
 
 for word in subjects:
-    counting(word)
-
-input_file.close()
+    print(word, data.count(word))
