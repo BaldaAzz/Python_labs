@@ -1,4 +1,3 @@
-data = ''
 employees = []
 employees_less_40 = []
 

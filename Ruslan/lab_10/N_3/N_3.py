@@ -1,14 +1,11 @@
 from math import prod
 
-file_input = open('input.txt', 'r')
-data = []
 numbers = []
 
-data = file_input.read()
-for num in data.split():
-    numbers.append(int(num))
-file_input.close()
+with open('input.txt', 'r', encoding='utf-8') as file:
+    data = file.read()
+    for num in data.split():
+        numbers.append(int(num))
 
-file_output = open('output.txt', 'w')
-file_output.write(str(prod(numbers)))
-file_output.close()
+with open('output.txt', 'w', encoding='utf-8') as file:
+    file.write(str(prod(numbers)))

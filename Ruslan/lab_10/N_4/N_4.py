@@ -1,18 +1,19 @@
 def replase_data(string):
-    return string.replace(' ', '').replace('.', '').replace('\n', '')
+    for i in (' ', '.', '\n'):
+        string.replace(i, '')
+    return string
 
-file_input = open('input.txt', 'r')
-data = file_input.read()
-file_input.close()
+with open('input.txt', 'r', encoding='utf-8') as file:
+    data = file.read()
 
 lines = data.count('\n')
 words = len(data.split())
 letters = len(replase_data(data))
 
 
-file_output = open('output.txt', 'w')
-file_output.write('Input file contains:\n')
-file_output.write(str(letters) + ' letters\n')
-file_output.write(str(words) + ' words\n')
-file_output.write(str(lines) + ' lines')
-file_output.close()
+with open('output.txt', 'w', encoding='utf-8') as file:
+    file.write('Input file contains:\n')
+    file.write(str(letters) + ' letters\n')
+    file.write(str(words) + ' words\n')
+    file.write(str(lines) + ' lines')
+
