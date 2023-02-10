@@ -19,7 +19,6 @@ class Vegetable:
         elif self._state == self.states[2]:
             self._state = self.states[3]
 
-
     def is_ripe(self):
             return self._state == self.states[3]    # Возвращает True, если созрел, и False, если нет
 
@@ -54,7 +53,7 @@ class Tomato(Vegetable):
 class TomatoBush:
     varieties = ('Агата', 'Де Барао', 'Бычье сердце', 'Сливка')
 
-    def __init__(self, number_of_tomatoes=randint(0, 10), variety=choice(varieties)):          # variety=choice(varieties)
+    def __init__(self, number_of_tomatoes=randint(1, 10), variety=choice(varieties)):          # variety=choice(varieties)
         self.number_of_tomatoes = number_of_tomatoes                                        # Выбирает случайный сорт томата
         self.variety = variety
         self.tomatoes = [Tomato(i, self.variety) for i in range(self.number_of_tomatoes)]
@@ -79,8 +78,7 @@ class TomatoBush:
 
 
 
-# bush = TomatoBush(15)                                # Проверка класса
-# bush.fill_tomato_list()
+# bush = TomatoBush(15)                               # Проверка класса
 # for i in range(3):
 #     bush.grow_all()
 # print(bush.all_are_ripe())
