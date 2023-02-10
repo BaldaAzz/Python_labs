@@ -37,12 +37,9 @@ class Tomato(Vegetable):
     def __init__(self, _index, variety,  _state=states[0]):
         super().__init__(_index, _state)
         self.variety = variety
-        
-    def is_ripenow(self):
-        print(super().is_ripe())
 
     def give_variety(self):
-        return print(self.variety)
+        return self.variety
 
 
 
@@ -51,40 +48,50 @@ class TomatoBush(Tomato):
     variety = varieties[randint(0,3)]
     states = ('Отсутствует', 'Цветение', 'Зеленый', 'Красный')
     
-    def __init__(self, tomatos_value, _state=states[0]):
-        super().__init__(self.variety , _state)
-        self.tomatos = ([Tomato(i, self.variety, self._state) for i in range(tomatos_value)])
+    def __init__(self, tomatos_value=randint(1,5), variety=choice(varieties)):
+        self.tomatos_value = tomatos_value
+        self.variety = variety
+        self.tomatos = ([Tomato(i, self.variety, self._state) for i in range(self.tomatos_value)])
         print(self.tomatos)
 
 
     def grow_all(self):
-        super().grow()
+      [i.grow() for i in self.tomatoes] 
 
         
     
     def all_are_ripe(self):
-        if all((self.tomatos).is_ripe()):
-            return True
+        result = True
+        for i in self.tomatoes:
+            if not i.is_ripe():            # Метод is_ripe() возвращает True, если помидор созрел,
+                result = False             # и False, если нет       
+        return result
     
     def give_away_all(self):
-        self.tomatos.clear()
+        if TomatoBush.all_art_ripe(self):
+            return self.tomatoes
 
 
 class Gardener(TomatoBush):
-    _plant=Tomato
-    states = ('Отсутствует', 'Цветение', 'Зеленый', 'Красный')
     
-    def __init__(self, name):
+    def __init__(self, name, plant):
         self.name = name
+        self._plant = plant
+        self.basket = []
         
     def work(self):
-        super().grow_all()
+        self._plant.grow_all()
     
     def harvest(self):
-        if super().all_are_ripe():
-            super().give_away_all()
+        tomatoes = self._plant.give_away_all()
+        if tomatoes:
+            print('Урожай успешно собран!')
+            self.basket = tomatoes
         else:
-            print('Не все помидорки созрели!')
+            print('Урожай не дозрел!'))
+            
+    def get_variety_info(self):
+        print('Сорт томата:', self.basket[0].give_variety())
     
     def knowledge_base():
         print('Harvest time for tomatoes should ideally occur\n'
@@ -94,8 +101,6 @@ class Gardener(TomatoBush):
             'and allows for a measure of control over the ripening process.\n'
               )    
  
-a = Vegetable('test')
-d = Tomato
 key = ...
 while key != 0:
     key = int(input('Key: '))
@@ -103,21 +108,16 @@ while key != 0:
         Gardener.knowledge_base()  
         '''Work'''
     if key == 2:
-        b = TomatoBush(3)
-        c = Gardener('Tom')
+        t_b = TomatoBush()
+        gardener = Gardener('Tom', t_b)
         '''Work'''
     if key == 3:
-        a.grow()
-        b.grow_all()
-        b.is_ripenow()
-        c.work()
-
+        gardener.work()
     if key == 4:
-        c.harvest()
+        gardener.harvest()
     if key == 5:
-        c.work()
+        gardener.work()
     if key == 6:
-        c.harvest()
-
+        gardener.harvest()
     if key == 7:
-        d.give_variety
+        gardener.give_variety_info()
