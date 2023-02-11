@@ -3,6 +3,7 @@ def decorator(func):
         print('Запуск функции')
         func()
         print('Функция выполнена')
+    return warper
 
 @decorator
 def process_information():
