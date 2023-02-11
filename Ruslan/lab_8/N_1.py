@@ -1,14 +1,13 @@
-text = 'один два три четыре пять два три три два'
-dict_words = dict()
+n = input('Введите текст: ').split()
 
-for word in text.split():
-    dict_words[word] = dict_words.get(word, 0) + 1
+dictionary = {}
 
-max_value = max(dict_words.values())
-words = set()
-
-for key in dict_words:
-    if dict_words[key] == max_value:
-        words.add(key)
-
-print(sorted(words)[0])
+for word in n:
+    if dictionary.get(word, 0):
+        dictionary[word] += 1
+    else:
+        dictionary[word] = 1
+        
+m = max(dictionary.values())
+dict_sorted = dict(sorted(dictionary.items(), key=lambda x: x[1], reverse=True))
+print(list(dict_sorted.keys())[0])
