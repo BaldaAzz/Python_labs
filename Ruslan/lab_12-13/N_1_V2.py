@@ -4,10 +4,14 @@ class Bank:
         self.amount = amount
         self.years = years
 
-    def bank(self):
+    def make_contribution(self):
         persent = 0.1
 
         for i in range(self.years):
             self.amount += self.amount * persent
 
         return self.amount
+
+
+bank = Bank(155, 20)
+print(bank.make_contribution())
