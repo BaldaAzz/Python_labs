@@ -27,7 +27,17 @@ draw.stroke_color = Color('black')
 for sk_width, radius in circles.items():
     print(radius, sk_width)
     draw.stroke_width = sk_width
-    draw.ellipse(center_coords, radius)
+    draw.circle(center_coords, radius)
+    draw.draw(img)
+    draw.clear
+
+for sk_width, coords in lines.items():
+    draw.stroke_width = sk_width
+    for i in coords:
+        draw.line(i[0], i[1])
+        draw.draw(img)
+        draw.clear
+
 # draw.stroke_width = 3
 # draw.ellipse((200, 200), (100, 100))
 # draw.stroke_width = 2
@@ -49,4 +59,4 @@ for sk_width, radius in circles.items():
 # draw.line((200, 180), (200, 190))
 # draw.line((200, 210), (200, 220))
 draw.draw(img)
-display(img)
+img.save(filename ='tt.bmp')
