@@ -1,16 +1,29 @@
-subjects = ('ИПО (лаба)',
-            'ИПО (лекция)',
-            'ОАИП (лаба)',
-            'Матем (лекция)',
-            'Стандартизация (лекция)',
-            'Стандартизация (лаба)',
-            'Охрана труда (лекция)',
-            'Аловт (практическая)',
-            'Аловт (лекция)',
-            'Матмод (практическая)')
+subjects = ('ИПО', 'ОАИП', 'Матем', 'Охрана труда', 'Аловт', 'Матмод', 'Стандартизация')
+types_lessons = ('Лекция', 'Лаба', 'Практическая')
+days = ('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота')
 
-with open('input.txt', 'r', encoding='utf-8') as file:
-    data = file.read()
+with open(r'Ruslan/lab_10/N_6/input.txt', 'r', encoding='utf-8') as file:
+   data = file.read()
 
-for word in subjects:
-    print(word, data.count(word))
+new_data = data.split(sep='\n')
+for day in days:
+   new_data.remove(day)
+new_data.remove('')
+new_data.pop(-1)
+
+
+lessons = {}
+
+for subject in subjects:
+   for type_lesson in types_lessons:
+      key = subject + ' ' + type_lesson
+      lessons[key] = 0
+
+
+for item in new_data:
+   count_lesson = new_data.count(item)
+   lessons[item] = count_lesson
+
+
+for lesson, count_lesson in lessons.items():
+   print(lesson, count_lesson, end='\n')
