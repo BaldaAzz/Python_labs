@@ -16,13 +16,18 @@ print(urlunparse(result))
 print()
 
 
-url = 'ftp://user:123456@mysite.ru'
-
-result = urlparse(url)
+result = urlparse(urls[1])
 
 print('Имя пользователя:', result.username)
 print('Пороль:', result.password)
 
-# result = urlsplit(url)
-# print(result)
-# print(urlunsplit(result))
+print()
+urls_split = []
+
+for i in urls:
+    urls_split.append(urlsplit(i))
+
+print(urls_split)
+print()
+for i in urls_split:
+    print(urlunsplit(i))
