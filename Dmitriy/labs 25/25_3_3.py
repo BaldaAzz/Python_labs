@@ -8,12 +8,8 @@ max = np.argmax(lst)
 print(lst)
 print("индекс максимального элемента:",max ,"\nииндекс минимального элемента:", min)
 
-if max < min:
-    answer = np.sum(lst[max:min]) 
-    answer -= np.max(lst)
-else:
-    answer = np.sum(lst[min:max])
-    answer -= np.min(lst)
+answer = np.sum(lst[max:min + 1]) 
+
 print('Сумма:', answer)
 
 
