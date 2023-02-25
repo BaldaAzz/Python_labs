@@ -3,20 +3,21 @@ from random import randint, choice
 
 class Vegetable:
 
-    states = ('Absent', 'Flowering',    #'Отсутствует', 'Цветение',
-              'Green', 'Red')         #'Зеленый', 'Красный'
+    states = {0:'Absent',
+              1:'Flowering',
+              2:'Green',
+              3:'Red'}
 
     def __init__(self, _index, _state=states[0]):
         self._index = _index
         self._state = _state
+        self._state_stage = 0
 
     def grow(self):
-        if self._state == self.states[0]:
-            self._state = self.states[1]
-        elif self._state == self.states[1]:
-            self._state = self.states[2]
-        elif self._state == self.states[2]:
-            self._state = self.states[3]
+        if self._state_stage != len(self.states)-1:
+            self._state_stage += 1
+            self._state = self.states[self._state_stage]
+        else: print('Max stage')
         print(self, self._state)
 
     def is_ripe(self):
@@ -24,11 +25,8 @@ class Vegetable:
 
 
 class Tomato(Vegetable):
-    states = ('Absent', 'Flowering',    #'Отсутствует', 'Цветение',
-              'Green', 'Red')         #'Зеленый', 'Красный'
-              
 
-    def __init__(self, _index, variety,  _state=states[0]):
+    def __init__(self, _index, variety,  _state='Absent'):
         super().__init__(_index, _state)
         self.variety = variety
 
@@ -37,10 +35,12 @@ class Tomato(Vegetable):
 
 
 class TomatoBush(Tomato):
-    varieties = ('Agata', 'De Barao',                  #Агата, Де Барао, 
-                 'Bull heart', 'Cream')                #Бычье сердце, Сливка
+    varieties = ('Agata',
+                 'De Barao',             
+                 'Bull heart',
+                 'Cream')                
 
-    def __init__(self, tomatos_value=randint(1, 3), variety=choice(varieties)):
+    def __init__(self, tomatos_value, variety=choice(varieties)):
         self.tomatos_value = tomatos_value
         self.variety = variety
         self.tomatoes = ([Tomato(i, self.variety)
@@ -74,7 +74,7 @@ class Gardener(TomatoBush):
     def harvest(self):
         tomatoes = self._plant.give_away_all()
         if tomatoes:
-            print('the harvest has been successdully harvested!\n')
+            print('the harvest has been successfully harvested!\n')
             self.basket = tomatoes
         else:
             print('The harvest isnt ripe!\n')
@@ -95,32 +95,64 @@ class Gardener(TomatoBush):
               )
 
 
+def Interface(i):
+    print('\n' * 10)
+    return{ 1:lambda *ard:Gardener.knowledge_base(),
+            2:lambda *arg:print('Created:\n',t_b.tomatoes,'\n', gardener, '\n'), 
+            3:lambda gardener:gardener.work(),
+            4:lambda gardener:gardener.harvest(),
+            5:lambda gardener:gardener.get_variety_info()
+            }.get(i)
+
 key = ...
-print('\n' * 10)
+print('\n' * 10)                                                 
+'''Та ебись оно в рот а не создание и зранение переменных через лямду'''
+t_b = TomatoBush(randint(1, 3))
+gardener = Gardener('none', t_b)
+
 while key != 0:
     print('1. Knowledge base\n'
           '2. Create TomatoBush and Gardener\n'
           '3. Gardener work\n'
           '4. Gardener harvest\n'
-          '5. Harvested Variety'
+          '5. Harvested Variety\n'
+          '0. Exit'
           )
-    key = int(input('Key: '))
-    if key == 1:
-        print('\n' * 10)
-        Gardener.knowledge_base()
-    if key == 2:
-        print('\n' * 10)
-        t_b = TomatoBush()
-        gardener = Gardener('Tom', t_b)
-        print('Created:\n',t_b.tomatoes,
-              '\n', gardener, '\n')
-    if key == 3:
-        print('\n' * 10)
-        gardener.work()
-        print('\n')
-    if key == 4:
-        print('\n' * 10)
-        gardener.harvest()
-    if key == 5:
-        print('\n' * 10)
-        gardener.get_variety_info()
+    key = int(input('Key:'))
+    Interface(key)(gardener)
+    
+
+
+
+
+
+
+
+
+# while key != 0:
+#     print('1. Knowledge base\n'
+#           '2. Create TomatoBush and Gardener\n'
+#           '3. Gardener work\n'
+#           '4. Gardener harvest\n'
+#           '5. Harvested Variety'
+#           )
+#     key = int(input('Key: '))
+#     if key == 1:
+#         print('\n' * 10)
+#         Gardener.knowledge_base()
+#     if key == 2:
+#         print('\n' * 10)
+#         t_b = TomatoBush(randint(1, 3))
+#         gardener = Gardener('Tom', t_b)
+#         print('Created:\n',t_b.tomatoes,
+#               '\n', gardener, '\n')
+#     if key == 3:
+#         print('\n' * 10)
+#         gardener.work()
+#         print('\n')
+#     if key == 4:
+#         print('\n' * 10)
+#         gardener.harvest()
+#     if key == 5:
+#         print('\n' * 10)
+#         gardener.get_variety_info()
