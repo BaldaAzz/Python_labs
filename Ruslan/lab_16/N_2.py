@@ -1,14 +1,14 @@
 def start_func(func):
-    def warper():
+    def wrapper():
         print('Запуск функции')
         func()
-    return warper
+    return wrapper
 
 def finish_func(func):
-    def warper():
+    def wrapper():
         func()
         print('Функция выполнена')
-    return warper
+    return wrapper
 
 @start_func
 def launch_func():

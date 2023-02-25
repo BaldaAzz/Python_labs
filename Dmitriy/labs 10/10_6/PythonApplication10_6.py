@@ -1,0 +1,17 @@
+def counting(word):
+    input = open('labs 10/10_6/input.txt', 'r')
+    data = input.read()
+    countings = data.count(word)    
+    print(word,countings)
+    input.close()
+
+counting('питон(лаба)')
+counting('ОАИП(лаба)')
+counting('матем(лекция)')
+counting('стандартизация(Лекция)')
+counting('охрана труда(Лекция)')
+counting('охрана труда(лаба)')
+counting('Аловт(Практическая)')
+counting('Аловт(Лекция)')
+counting('матмод(Практическая)')
+counting('стандартизация(Лаба)')

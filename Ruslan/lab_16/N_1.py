@@ -1,9 +1,9 @@
 def decorator(func):
-    def warper():
+    def wrapper():
         print('Запуск функции')
         func()
         print('Функция выполнена')
-    return warper
+    return wrapper
 
 @decorator
 def process_information():

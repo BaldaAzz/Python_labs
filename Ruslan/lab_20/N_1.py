@@ -1,29 +1,33 @@
 from urllib.parse import urlparse, urlunparse, urlsplit, urlunsplit
 
 
-url = 'https://lpgenerator.ru/blog/2011/04/25/url-adresa-i-celevye-stranicy/'
+urls = ('https://lpgenerator.ru/blog/2011/04/25/url-adresa-i-celevye-stranicy/',
+        'ftp://user:123456@mysite.ru')
 
-result = urlparse(url)
-result_tuple = tuple(result)
+result = urlparse(urls[0])
 
-print(result.scheme)
-print(result.netloc)
-print(result.hostname)
-print(result.port)
-print(result.params)
-print(result.query)
-print(result.fragment )
+print('Название протокола:',result.scheme)
+print('Название домена:', result.hostname)
+print('Номер порта:', result.port)
+print('Путь:', result.path)
+print('Якорь:', result.fragment)
 
 print(urlunparse(result))
 print()
 
-url = 'ftp://user:123456@mysite.ru'
 
-result = urlparse(url)
+result = urlparse(urls[1])
 
-print(result.username)
-print(result.password)
+print('Имя пользователя:', result.username)
+print('Пороль:', result.password)
 
-result = urlsplit(url)
-print(result)
-print(urlunsplit(result))
+print()
+urls_split = []
+
+for i in urls:
+    urls_split.append(urlsplit(i))
+
+print(urls_split)
+print()
+for i in urls_split:
+    print(urlunsplit(i))

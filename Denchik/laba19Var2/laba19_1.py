@@ -2,7 +2,6 @@ from wand.image import Image
 from wand.color import Color
 from wand.drawing import Drawing
 from wand.display import display
-from wand.image import BaseImage
 
 
 img = Image(width=500, height=500, background=Color("white"))

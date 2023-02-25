@@ -1,14 +1,13 @@
 def check_password(func):
-    def warper():
-        password = input()
+    def wrapper(password, N):
         if password == '1111':
-           print(func())
+           return func(N)
         else:
             print('В доступе отказано')
-    return warper
+    return wrapper
 
 @check_password
 def get_sum(N):
     return sum([i for i in range(N)])
 
-get_sum()
+print(get_sum(input(), 15))
