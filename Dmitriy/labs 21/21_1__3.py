@@ -10,9 +10,8 @@ for i in links:
     print("//////////////////////////////////////////////////////////////////////////////////////////////", i)
     try:
         response = requests.get(i)
-        print(response.status_code)
+        print(response.status_code) 
         
-        text = response.content.decode('UTF-8') 
         print(response.headers) 
     except:
         print("Ошибка")

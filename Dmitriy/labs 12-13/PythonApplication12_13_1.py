@@ -5,15 +5,15 @@ class Strings():
    
     def spaseing(self):
         count = 0
-        for i in  self.designer:
-            if i == ' ':
+        for it in  self.designer:
+            if it == ' ':
                 count += 1
         return(count)
 
     def replace(self):
         return(str.lower(self.designer))
     
-text = Strings(designer= str(input('Введите текст:')))
+text = Strings(designer = str(input('Введите текст:')))
 
 print("колличество пробелов:",text.spaseing())
 print("текст в нижнем регистре:",text.replace())
