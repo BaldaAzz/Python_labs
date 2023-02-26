@@ -32,14 +32,14 @@ class Buldings():
         
 house = Buldings(None,None,None,None,None)
 count = int(input("Введите количесвто зданий:"))
-i = 0
+it = 0
 
-while i < count:
+while it < count:
     house.write()
     print(house.give_information())
     print("высота этажа:",house.floor_height(),"метра")
     print("колличевcтво квартир в подъезде",house.number_of_apartments_per_enterences())
     print("колличевство квартир на этаже:",house.number_of_apartments_per_floor())
     print("случайный номер:",house.randomize())
-    i += 1
+    it += 1
     
