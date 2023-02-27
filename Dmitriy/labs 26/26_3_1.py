@@ -1,7 +1,12 @@
 import numpy as np
 
 lst = np.array(np.arange(-5,10),int)
-lst_copy = lst.copy()
-neg = lst < 0
-negative = np.delete(lst.copy, neg)
-print((negative))
+    
+zero = list(lst).index(0)
+
+print(lst)
+
+lst.sort()
+print("отрицательных элементов:",len(lst[0:zero]))
+print("положительных элементов:",len(lst[zero + 1:]))
+print("нулевых элементов:",len(lst[zero:zero + 1]))
