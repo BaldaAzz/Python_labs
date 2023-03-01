@@ -4,7 +4,7 @@
 
 import numpy as np
 
-mass = np.array(np.random.randint(0, 10, 10), dtype=int)
+mass = np.array(np.random.randint(0, 10, 10))
 print(mass)
 if np.argmin(mass) < np.argmax(mass):
     print(np.prod(mass[np.argmin(mass) + 1  : np.argmax(mass)])) 

@@ -3,9 +3,7 @@
 from random import randint
 import numpy as np
 
-lst = []
-lst.append([randint(-10, 10) for i in range(32)])
-mass = np.array(lst).reshape(4, 8)
+mass = np.array(np.random.randint(-10, 10, 32)).reshape(4, 8)
 
 print(mass)
 
