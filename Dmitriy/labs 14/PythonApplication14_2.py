@@ -1,64 +1,57 @@
-class Vegetable:
-    states = {1:'Отсутствует', 2:'Цветение',  3:'Зеленый', 4: 'Красный'}
+import random
 
-    def __init__(self, _index,): 
+class Vegetable:
+    states ={1:'Отсутствует', 2:'Цветение',  3:'Зеленый', 4: 'Красный'}
+    
+
+    def __init__(self, _index):
         self._index = _index
         self._state = 1
 
     def grow(self):
-        if self._state < 3:
+        if self._state < 4:
             self._state + 1
-        else: 
-            print('макимальная стадия')
-        return(self._state)
 
     def is_ripe(self):
-        if self._state == self.states[3]:
-            return 'Овощ созрел'
-        else: 
-            return 'Овощ не созрел'
-
-    def get_info(self):
-        print(self._state)
+        if self._state == 4:
+            print('Овощ созрел')
+        else:
+            print('Овощь не созрел')
 
 class Tomato(Vegetable):
+
     def __init__(self,variety):
         self.variety = variety
 
     def give_variety(self):
-        return self.variety
+        print('Список сортов:', self.variety)
 
 class TomatoBush(Tomato):
-    varieties = ['Агата', 'Де Барао', 'Бычье сердце', 'Сливка']
 
-    def __init__(self, number_of_tomatoes, variety):
+    varieties = ['Агата', 'Де Барао', 'Бычье сердце', 'Сливка']
+    a = random.choice(varieties)
+
+    def __init__(self, number_of_tomatoes, variety,tomstoes):
         self.number_of_tomatoes = number_of_tomatoes
         self.variety = variety
-        self.tomatoes = []
-
+        self.tomatoes = tomstoes
+        
     def making_tomatoes(self):
         for tomato in range(0,self.number_of_tomatoes):
             tomato = Tomato(self.variety)
             self.tomatoes.append(tomato)
-        
+    
     def grow_all(self):
-        TomatoBush.making_tomatoes()
         for tomato in self.tomatoes:
             tomato.grow()
+            
 
     def all_are_ripe(self):
-        if self._state == self.states[3]:
-            return True
-        else:
-            return False
+        return [tomato.is_ripe() for tomato in self.tomatoes]
 
     def give_away_all(self):
-       self.tomatoes.clear()
-       return self.tomatoes
-
-    def get_list(self):
-        print (self.tomatoes)
-
+        self.tomatoes = []
+        
 class Gardener(TomatoBush):
     def __init__(self,name,plant):
         self._plant = plant
@@ -84,9 +77,8 @@ print("0 - Агата \n1 - Де Барао\n2 - Бычье сердце\n3 - С
 variety = int(input())
 oneTomato = Tomato(TomatoBush.varieties[variety])
 count = int(input("Введите количевство помидоров"))
-bush = TomatoBush(count,oneTomato)
-bush.making_tomatoes()
-bush.get_list()
+bush = TomatoBush(count,oneTomato,TomatoBush.making_tomatoes())
+
 
 Ivan = Gardener('Ваня', oneTomato)
 print("Помогите нашему содовнику, Ване, собрать помидоры")

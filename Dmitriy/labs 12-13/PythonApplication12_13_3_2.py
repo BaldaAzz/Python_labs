@@ -28,18 +28,19 @@ class Buldings():
         self.entrances = int(input("Введите колчичевство подъездов:")) 
     
     def give_information(self):
-        print("высота здания:",self.height,"колличевстов этажей:",self.floor,"количевстов квартир:",self.apartments,"колличевство подъездов:",self.entrances) 
+        return("высота здания:",self.height,"колличевстов этажей:",self.floor,"количевстов квартир:",self.apartments,"колличевство подъездов:",self.entrances) 
         
 house = Buldings(None,None,None,None,None)
 count = int(input("Введите количесвто зданий:"))
 it = 0
-
+lst = []
 while it < count:
-    house.write()
+    lst.append(house.write())
     print(house.give_information())
     print("высота этажа:",house.floor_height(),"метра")
     print("колличевcтво квартир в подъезде",house.number_of_apartments_per_enterences())
     print("колличевство квартир на этаже:",house.number_of_apartments_per_floor())
     print("случайный номер:",house.randomize())
     it += 1
+print(lst)
     

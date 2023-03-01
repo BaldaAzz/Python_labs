@@ -30,15 +30,10 @@ state = {
     524 : 'A timeout Occurred'
     } 
 for link in links:
+    response = requests.get(link)     
     for status in state:
         if int(links[link]) == status:
-            print(link, links[link], state[status],"\n")
-            byte_response = bytes(links.values())
-            response_in_str = byte_response.content.decode('UTF-8')
-            print(response_in_str)
+            print("/////////////////////\n",link, links[link], state[status],"\n//////////////////////////////////")
+            response_in_str = response.content.decode('UTF-8')
+            print(response.headers)
             
-            
-
-
-
-     
