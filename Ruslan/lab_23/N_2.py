@@ -1,17 +1,19 @@
+'''2.	Создайте двумерный массив вещественных чисел размерностью 6х7. 
+Массив содержит отрицательные и положительные элементы. 
+Выведите первую строку массива. 
+Замените элементы на противоположные. 
+Определите длину двумерного массива.  '''
+
 import numpy as np 
-from random import randint
 
 
-a = [randint(-10, 10) for i in range(42)]
+mass = np.array(np.random.randint(-10, 10, 42)).reshape(6, 7)
 
+print(mass)
 
-arrray_1 = np.array(a, dtype=int)
+print(mass[0])
 
-arrray_1 = arrray_1.reshape(6, 7)
-print(arrray_1)
+mass[0] = -mass[0]
+print(mass[0])
 
-print(arrray_1[0])
-
-print(-arrray_1[0])
-
-print(arrray_1.size)
+print(mass.size)

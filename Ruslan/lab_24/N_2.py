@@ -1,13 +1,14 @@
+'''
+2.	Задана матрица 3х5. 
+Возвести элементы матрицы в квадрат.
+'''
+
 import numpy as np
 
 
-matrix = []
-for i in range(3):
-    matrix.append([np.random.randint(0, 9) for j in range(5)])
+matrix = np.array(np.arange(15)).reshape(3, 5)
+print(matrix) 
 
-matrix_np = np.array(matrix, dtype=int)
-print(matrix_np) 
+matrix **= 2
 
-matrix_np **= 2
-
-print(matrix_np)
+print(matrix)

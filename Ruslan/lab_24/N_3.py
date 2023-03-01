@@ -1,12 +1,18 @@
+'''
+3.	Задан одномерный массив размерностью 9. 
+Переформатировать в двумерный массив. 
+Элементы главной диагонали заменить на 1.
+'''
+
 import numpy as np
 
 
-matrix = np.array(np.arange(0, 9), dtype=int).reshape(3,3)
+mass = np.array(np.arange(9))
+print(mass)
+
+matrix = mass.reshape(3, 3)
 print(matrix)
 
-for i in range(matrix.shape[0]):
-    for j in range(matrix.shape[1]):
-        if i == j:
-            matrix[i, j] = 1
 
+np.fill_diagonal(matrix, 1)
 print(matrix)

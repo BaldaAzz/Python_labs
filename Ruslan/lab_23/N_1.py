@@ -1,12 +1,17 @@
+'''1.	Создайте одномерный массив размерностью 6.  
+Замените первый элемент на противоположный.  
+Поверьте, присутствуют ли в массиве элементы со значением 5. 
+Переформатируйте одномерный массив в двумерный и определите количество столбцов и строк.  '''
+
 import numpy as np
 
 
-array_1 = np.array([1, 2, 3, 4, 5, 6], dtype=int)
+mass = np.array(np.random.randint(-10, 10, 6))
+print(mass)
 
-array_1[0] = -array_1[0]
-print(array_1)
+mass[0] = -mass[0]
+print(mass)
 
-print(5 in array_1)
+print(5 in mass)
 
-array_2 = array_1.reshape(2, 3)
-print(array_2)
+print(mass.reshape(2, 3))
