@@ -1,28 +1,26 @@
 class Vegetable:
-    key = 1
-    states = {1: 'Отсутствует', 2: 'Цветение', 3: 'Зеленый', 4: 'Красный'}
-    state = states[1]
+    states = {1:'Отсутствует', 2:'Цветение',  3:'Зеленый', 4: 'Красный'}
 
-    def __init__(self, index): 
-        self.index = index
-        self.state = self.states[1]
+    def __init__(self, _index, _state = states[1]): 
+        self._index = _index
+        self._state = _state
+        self.i = 0
 
     def grow(self):
-        if self.state != self.states[4]:
-            self.state = self.states[self.key+1]
-        else:
-            self.state = Vegetable.states[4]
-        self.key += 1
-        return self.state
+        if self.i != len(self.states)-1:
+            self.i += 1
+            self._state = self.states[self.i]
+        else: print('макимальная стадия')
+        return(self._state)
 
     def is_ripe(self):
-        if self.state == self.states[4]:
+        if self._state == self.states[3]:
             return 'Овощ созрел'
         else: 
             return 'Овощ не созрел'
 
     def get_info(self):
-        print(self.state)
+        print(self._state)
 
 class Tomato(Vegetable):
     def __init__(self,variety):
@@ -34,26 +32,21 @@ class Tomato(Vegetable):
 class TomatoBush(Tomato):
     varieties = ['Агата', 'Де Барао', 'Бычье сердце', 'Сливка']
 
-    def __init__(self, number_of_tomatoes, variety, key):
+    def __init__(self, number_of_tomatoes, variety):
         self.number_of_tomatoes = number_of_tomatoes
         self.variety = variety
         self.tomatoes = []
 
+    def making_tomatoes(self):
         for tomato in range(0,self.number_of_tomatoes):
             tomato = Tomato(self.variety)
             self.tomatoes.append(tomato)
         
-
     def grow_all(self):
-        if self.state != self.states[4]:
-            self.state = self.states[self.key+1]
-        else:
-            self.state = Vegetable.states[4]
-        self.key += 1
-        return self.state
+        [i.grow() for i in self.tomatoes]
 
     def all_are_ripe(self):
-        if self.state == self.states[4]:
+        if self._state == self.states[3]:
             return True
         else:
             return False
@@ -65,41 +58,41 @@ class TomatoBush(Tomato):
     def get_list(self):
         print (self.tomatoes)
 
-class Gardener(Vegetable):
+class Gardener(TomatoBush):
     def __init__(self,name,plant):
         self.plant = plant
 
     def work(self):
-        if self.state != self.states[4]:
-            self.state = self.states[self.key+1]
-        else:
-            self.state = Vegetable.states[4]
-        self.key += 1
-        return self.state
+        self.plant.grow_all()
 
     def harvest(self):
         harvested = []
-        if self.state == self.states[4]:
+        if self._state == self.states[3]:
             harvested.append(self.plant)
-            print('\nТоматы созрели\n')
-            return harvested
-        else: print('\nНе все томаты созрели\n')
+            return('\nТоматы созрели\n') and harvested
+        else: return('\nНе все томаты созрели\n')
 
     def  knowledge_base(self):
-        print("\nHarvest time for tomatoes should ideally occur \nwhen the fruit is a mature green and \nthen allowed to ripen off the vine.\nThis prevents splitting or bruising \nand allows for a measure of control over the ripening process")
+        return("\nHarvest time for tomatoes should ideally occur \nwhen the fruit is a mature green and \nthen allowed to ripen off the vine.\nThis prevents splitting or bruising \nand allows for a measure of control over the ripening process")
 
-pomidor = Vegetable(150)
 
-bush = TomatoBush(29,"Бычье сердце",1)
+index = int(input("введите индекс помидора:"))
+pomidor = Vegetable(index)
+print("введите вид помидора")
+print("0 - Агата \n1 - Де Барао\n2 - Бычье сердце\n3 - Сливка")
+variety = int(input())
+oneTomato = Tomato(TomatoBush.varieties[variety])
+count = int(input("Введите количевство помидоров"))
+bush = TomatoBush(count,oneTomato)
+bush.making_tomatoes()
 bush.get_list()
 
-oneTomato = Tomato('Де Барао')
-
 Ivan = Gardener('Ваня', oneTomato)
-Ivan.knowledge_base()
-Ivan.work()
-Ivan.harvest()
-Ivan.work()
-Ivan.work()
-Ivan.harvest()
-print(oneTomato.variety)
+print("Помогите нашему содовнику, Ване, собрать помидоры")
+func = [Ivan.knowledge_base(),Ivan.work(),Ivan.harvest(),"Вы отлично справились"]
+print("0 - подсказка\n1 - ростить\n2 - состояние\n3 - выход")
+action = 0
+while action != 3:
+    action = int(input("введите действие:"))
+    func[action]
+    print(func[action])

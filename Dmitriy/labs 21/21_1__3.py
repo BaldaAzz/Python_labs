@@ -1,19 +1,44 @@
 import  requests
 
-links = ["https://translate.yandex.by/fro=tabbar",
-        "https://kinogo.by/21789-the-addams-family_2019.htm",
-        " http://docs.google.com/spreadshe/",
-        "https://python-scripts.com/reqsts",
-        "http://avgrodno.by/raspisanie/"]
+yandex =  'https://translate.yandex.by/fro=tabbar'
+vk = 'https://vk.com/dev'
+google ='http://docs.google.com/spreadshe/'
+python_scripts = 'https://python-scripts.com/reqsts'
+avagrodno = 'http://avgrodno.by/raspisanie/'
 
-for i in links:
-    print("//////////////////////////////////////////////////////////////////////////////////////////////", i)
-    try:
-        response = requests.get(i)
-        print(response.status_code) 
-        
-        print(response.headers) 
-    except:
-        print("Ошибка")
-    
-   
+
+
+links = {'https://translate.yandex.by/fro=tabbar':requests.get(yandex).status_code,
+        'https://vk.com/dev':requests.get(vk).status_code,
+        ' http://docs.google.com/spreadshe/':requests.get(google).status_code,
+        'https://python-scripts.com/reqsts':requests.get(python_scripts).status_code,
+        'http://avgrodno.by/raspisanie/':requests.get(avagrodno).status_code
+        }
+
+state = { 
+    102 : 'Processing',
+    200 : 'Ok',
+    204 : 'No Content',
+    400 : 'Bad Request',
+    403 : 'Forbidden',
+    404 : 'Not Found',
+    408 : 'Request Timeout',
+    410 : 'Gone',
+    500 : 'Internal Server Error',
+    521 : 'Web Server Is Down',
+    522 : 'Connection Timed Out',
+    524 : 'A timeout Occurred'
+    } 
+for link in links:
+    for status in state:
+        if int(links[link]) == status:
+            print(link, links[link], state[status],"\n")
+            byte_response = bytes(links.values())
+            response_in_str = byte_response.content.decode('UTF-8')
+            print(response_in_str)
+            
+            
+
+
+
+     

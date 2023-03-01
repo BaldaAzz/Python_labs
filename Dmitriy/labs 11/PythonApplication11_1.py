@@ -18,7 +18,7 @@ class Worker():
         return(self.surname,self.salary,self.year_work) 
       
     def info(self):
-        print("Фамилия:",self.surname,"\nзарабатная плата:", self.salary , "\nначал работать:",self.year_work)
+        print("\nФамилия:",self.surname,"\nзарабатная плата:", self.salary , "\nначал работать:",self.year_work)
         
 worker = Worker(None,None,None)
 
@@ -29,6 +29,6 @@ while it < count:
     worker.write_info()
     worker.info()
     print("работает",worker.number_of_years(),"лет")
-    print("работает после года",worker.number_of_days(),"дней")
+    print("работает после года",worker.number_of_days(),"дней\n")
     it += 1
     
