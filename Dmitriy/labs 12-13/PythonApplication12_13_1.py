@@ -7,7 +7,7 @@ class Strings():
         count = 0
         for it in  self.designer:
             if it == ' ':
-                count += 1
+                count += 1              
         return(count)
 
     def replace(self):

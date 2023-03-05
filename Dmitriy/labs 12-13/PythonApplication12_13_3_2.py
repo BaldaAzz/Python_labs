@@ -26,6 +26,7 @@ class Buldings():
         self.floor = int(input("Введите количевство этажей:")) 
         self.apartments = int(input("Введите колчичевство квартир:")) 
         self.entrances = int(input("Введите колчичевство подъездов:")) 
+        return(self.height,self.floor,self.apartments,self.entrances)
     
     def give_information(self):
         return("высота здания:",self.height,"колличевстов этажей:",self.floor,"количевстов квартир:",self.apartments,"колличевство подъездов:",self.entrances) 

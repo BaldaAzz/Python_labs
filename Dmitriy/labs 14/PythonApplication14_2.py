@@ -31,10 +31,10 @@ class TomatoBush(Tomato):
     varieties = ['Агата', 'Де Барао', 'Бычье сердце', 'Сливка']
     a = random.choice(varieties)
 
-    def __init__(self, number_of_tomatoes, variety,tomstoes):
+    def __init__(self, number_of_tomatoes, variety):
         self.number_of_tomatoes = number_of_tomatoes
         self.variety = variety
-        self.tomatoes = tomstoes
+        self.tomatoes = []
         
     def making_tomatoes(self):
         for tomato in range(0,self.number_of_tomatoes):
@@ -43,11 +43,11 @@ class TomatoBush(Tomato):
     
     def grow_all(self):
         for tomato in self.tomatoes:
-            tomato.grow()
+            self.grow(tomato)
             
 
     def all_are_ripe(self):
-        return [tomato.is_ripe() for tomato in self.tomatoes]
+        return [all (self.is_ripe)]
 
     def give_away_all(self):
         self.tomatoes = []
@@ -57,7 +57,7 @@ class Gardener(TomatoBush):
         self._plant = plant
 
     def work(self):
-        self._plant.grow_all()
+        self.grow_all(self._plant)
 
     def harvest(self):
         harvested = []
@@ -77,7 +77,7 @@ print("0 - Агата \n1 - Де Барао\n2 - Бычье сердце\n3 - С
 variety = int(input())
 oneTomato = Tomato(TomatoBush.varieties[variety])
 count = int(input("Введите количевство помидоров"))
-bush = TomatoBush(count,oneTomato,TomatoBush.making_tomatoes())
+bush = TomatoBush(count,oneTomato,)
 
 
 Ivan = Gardener('Ваня', oneTomato)

@@ -1,12 +1,9 @@
 import numpy as np
 
-lst = np.array(np.arange(-5,10),int)
-    
-zero = list(lst).index(0)
+array = np.random.randint(-5, 10, (15))
 
-print(lst)
-
-lst.sort()
-print("отрицательных элементов:",len(lst[0:zero]))
-print("положительных элементов:",len(lst[zero + 1:]))
-print("нулевых элементов:",list(lst).count(0))
+print(array)
+print ('Количество нулей:', len(np.nonzero(array == 0)[0]))
+print ('Количество положительных элементов:', len(np.nonzero(array > 0)[0]))
+print ('Количество отрицательных элементов:', len(np.nonzero(array < 0)[0]))
+   

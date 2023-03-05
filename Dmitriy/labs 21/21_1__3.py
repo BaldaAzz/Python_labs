@@ -6,8 +6,6 @@ google ='http://docs.google.com/spreadshe/'
 python_scripts = 'https://python-scripts.com/reqsts'
 avagrodno = 'http://avgrodno.by/raspisanie/'
 
-
-
 links = {'https://translate.yandex.by/fro=tabbar':requests.get(yandex).status_code,
         'https://vk.com/dev':requests.get(vk).status_code,
         ' http://docs.google.com/spreadshe/':requests.get(google).status_code,

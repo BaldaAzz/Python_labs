@@ -1,9 +1,9 @@
 import numpy as np
 
-lst = np.random.randint(0,25, (5,5),int)
+array = np.random.randint(0, 50, (5, 5))
 
-print(lst)
+print(array)
 
-individual = np.unique(lst, return_counts = True)
+uniq = np.unique(array, return_counts = True )[1] == 1
 
-print(individual)
+print(np.unique(array)[uniq])
