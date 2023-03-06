@@ -5,9 +5,9 @@
 
 import numpy as np
 
-mass = np.array(np.random.randint(0, 10, 36)).reshape(6, 6)
-
-mass_unique = np.unique(mass, return_index=False, return_inverse=False, return_counts=False, axis=None)
+mass = np.array(np.random.randint( 0, 12, 36)).reshape(6, 6)
+mass_unique = np.unique(mass, return_counts = True,)
 
 print(mass)
 print(mass_unique)
+print(np.extract( mass_unique[1] == 1, mass_unique[0]))
