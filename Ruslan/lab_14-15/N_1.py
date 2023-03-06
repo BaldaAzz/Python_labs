@@ -2,22 +2,22 @@ from random import choice, randint
 
 
 class Vegetable:
-    states = ('Отсутствует', 'Цветение', 'Зеленый', 'Красный')
-
-    def __init__(self, _index, _state=states[0]):
+    def __init__(self, _index):
         self._index = _index
-        self._state = _state
+        self.states = {0: 'Отсутствует',
+                       1: 'Цветение',
+                       2: 'Зеленый', 
+                       3: 'Красный'}
+        self._state = self.states[0]
+        self._state_x = 0
 
 
     def grow(self):                                 # Проверяет статус зрелости и изменяет его
-        if self._state == self.states[0]:
-            self._state = self.states[1]
-
-        elif self._state == self.states[1]:
-            self._state = self.states[2]
-
-        elif self._state == self.states[2]:
-            self._state = self.states[3]
+        if self._state_x == len(self.states.keys()) - 1:
+            pass
+        else:
+            self._state_x += 1
+            self._state = self.states[self._state_x]
 
     def is_ripe(self):
             return self._state == self.states[3]    # Возвращает True, если созрел, и False, если нет
@@ -33,8 +33,8 @@ class Vegetable:
 
 class Tomato(Vegetable):
 
-    def __init__(self, _index, variety, _state='Отсутствует'):
-        super().__init__(_index, _state)
+    def __init__(self, _index, variety):
+        super().__init__(_index)
         self.variety = variety
 
 
@@ -78,11 +78,12 @@ class TomatoBush:
 
 
 
-# bush = TomatoBush(15)                               # Проверка класса
+# bush = TomatoBush(15)                             # Проверка класса
+# print(bush.all_are_ripe())
 # for i in range(3):
 #     bush.grow_all()
 # print(bush.all_are_ripe())
-# bush.give_away_all()
+# print(bush.give_away_all())
 
 
 class Gardener:

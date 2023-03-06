@@ -11,13 +11,10 @@ urls = {
 
 
 for key in urls.keys():
-    urls[key] = requests.get(key)
+    urls[key] = requests.get(key).status_code
     if urls[key] == 200:
         print(f'Успешно выполнен! \n{key}')
     else:
-        print(f'Ответ на запрос: {byte(urls[key].status_code)}')
-
+        print(f'Ответ на запрос: {urls[key].status_code}')
     response = urls[key]
     print('Информация об HTTP заголовков',response.headers, '\n\n')
-    print() # !!!НЕхватает вывода запроса в байтовом виде
-
