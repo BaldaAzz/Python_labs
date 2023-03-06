@@ -1,20 +1,20 @@
-# 1. Даны два двумерных массива.
-#  Посчитайте сумму транспонированных матриц,произведение матриц.
-#  Определите, какая сумма больше.
+"""1. Даны два двумерных массива.
+ Посчитайте сумму транспонированных матриц,произведение матриц.
+ Определите, какая сумма больше."""
 
-from random import randint
 import numpy as np
 
 mass_1 = np.array(np.random.randint(-10, 10, 25)).reshape(5, 5)
 mass_2 = np.array(np.random.randint(-10, 10, 25)).reshape(5, 5)
 
-mass_sum = (mass_1 + mass_2).T
-mass_multi = mass_1 * mass_2
-mass_sim = 'сумма первого больше' if sum(sum(mass_1)) > sum(sum(mass_2)) else 'сумма второго больше'
+mass_sum = (mass_1 + mass_2).T #Транспориванная матрица сумм первой и второй матрицы
+mass_multi = mass_1 * mass_2   #Матрица произведния первой и второй матрицы 
+mass_sum_isbiggest = 'больше сумма первого' if np.sum(mass_1) > np.sum(mass_2) else 'больше сумма второго'
 
 
-print(mass_1)
-print(mass_2)
-print(mass_sum)
-print(mass_multi)
-print(mass_sim)
+
+print('Первый масив \n',mass_1)
+print('Второй масив \n',mass_2)
+print('Сумма \n',mass_sum)
+print('Произведение \n',mass_multi)
+print(mass_sum_isbiggest)
