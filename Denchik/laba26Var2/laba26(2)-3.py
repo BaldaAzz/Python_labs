@@ -5,7 +5,7 @@
 
 import numpy as np
 
-mass = np.random.randint(-15, 15, 42).reshape(6, 7)
+mass = np.random.randint(-15, 15, (6, 7))
 elements_modular_large = np.extract(abs(mass) > np.max(mass), mass)
 elements_modular_large_value = elements_modular_large.size
 
