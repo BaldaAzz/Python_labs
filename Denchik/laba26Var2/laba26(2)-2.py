@@ -8,6 +8,7 @@ import numpy as np
 mass = np.array(np.random.randint( 0, 12, 36)).reshape(6, 6)
 mass_unique = np.unique(mass, return_counts = True,)
 
-print(mass)
-print(mass_unique)
-print(np.extract( mass_unique[1] == 1, mass_unique[0]))
+print('Massiv\n',mass)
+print('Unique elements in massiv\n',mass_unique[0])
+print('The number of each uniqie element in massiv\n',mass_unique[1])
+print('Elements that meet once',np.extract( mass_unique[1] == 1, mass_unique[0]))
