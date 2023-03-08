@@ -12,9 +12,9 @@ import numpy as np
 matrix = np.random.randint(-5, 4, size=(5, 8))
 print(matrix)
 
-count_positiv_nums = np.size(matrix[np.where(matrix > 0)])
-count_negative_nums = np.size(matrix[np.where(matrix < 0)])
-count_zeros = np.size(matrix[np.where(matrix == 0)])
+count_positiv_nums = np.size(matrix[matrix > 0])
+count_negative_nums = np.size(matrix[matrix < 0])
+count_zeros = np.size(matrix[matrix == 0])
 
 print(f'Количество положительных чисел: {count_positiv_nums}')
 print(f'Количество отрицательных чисел: {count_negative_nums}')
