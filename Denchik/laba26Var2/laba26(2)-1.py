@@ -6,11 +6,11 @@
 import numpy as np
 
 mass = np.random.randint(-5, 4, 20)
-mass_pozit = np.extract( mass > 0, mass)
-mass_negativ = np.extract( mass < 0, mass)
-mass_zero = np.extract( mass == 0, mass)
+mass_pozit = np.extract(mass > 0, mass)
+mass_negativ = np.extract(mass < 0, mass)
+mass_zero = np.extract(mass == 0, mass)
 
 print(mass)
-print(mass_pozit.size,'положительных элементов :',mass_pozit)
-print(mass_negativ.size,'отрицательных элементов :',mass_negativ)
-print(mass_zero.size,'нулевых элементов :',mass_zero)
+print(mass_pozit.size, 'положительных элементов :', mass_pozit)
+print(mass_negativ.size, 'отрицательных элементов :', mass_negativ)
+print(mass_zero.size, 'нулевых элементов :', mass_zero)
