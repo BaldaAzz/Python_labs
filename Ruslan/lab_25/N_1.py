@@ -18,12 +18,12 @@ print('Сумма матриц')
 print(matrix_A + matrix_B)
 print()
 print('Произведение транспонированых матриц')
-print(matrix_A.T * matrix_B.T)
+print()
 
 sum_matrix_A = np.sum(matrix_A)
 sum_matrix_B = np.sum(matrix_B)
 
 if sum_matrix_A > sum_matrix_B:
-    print(f'Сумма 1-ой матрицы ({sum_matrix_A}) > сумма 2-ой матрицы ({sum_matrix_B})')
+    print(f'Сумма матрицы A ({sum_matrix_A}) > сумма матрицы B({sum_matrix_B})')
 else:
-    print(f'Сумма 2-ой матрицы ({sum_matrix_B}) > сумма 1-ой матрицы ({sum_matrix_A})')
+    print(f'Сумма матрицы B ({sum_matrix_B}) > сумма  матрицы A ({sum_matrix_A})')
