@@ -2,7 +2,7 @@ import numpy as np
 
 summ = 0
 
-lst = np.random.randint(-50,50,15)
+lst = np.random.randint(-50, 50, 15)
 min = np.argmin(lst)
 max = np.argmax(lst)
 print(lst)

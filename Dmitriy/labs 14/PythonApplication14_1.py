@@ -1,3 +1,5 @@
+from random import randint
+ 
 class Vegetable:
     states = {1:'Отсутствует', 2:'Цветение',  3:'Зеленый', 4: 'Красный'}
 
@@ -18,9 +20,6 @@ class Vegetable:
         else: 
             return 'Овощ не созрел'
 
-    def get_info(self):
-        print(self._state)
-
 class Tomato(Vegetable):
     def __init__(self,variety):
         self.variety = variety
@@ -30,6 +29,7 @@ class Tomato(Vegetable):
 
 class TomatoBush(Tomato):
     varieties = ['Агата', 'Де Барао', 'Бычье сердце', 'Сливка']
+    random_num = randint(0,3)
 
     def __init__(self, number_of_tomatoes, variety):
         self.number_of_tomatoes = number_of_tomatoes
@@ -40,11 +40,11 @@ class TomatoBush(Tomato):
         for tomato in range(0,self.number_of_tomatoes):
             tomato = Tomato(self.variety)
             self.tomatoes.append(tomato)
+        return self.tomatoes
         
     def grow_all(self):
-        TomatoBush.making_tomatoes()
         for tomato in self.tomatoes:
-            tomato.grow()
+            self.grow(tomato)
 
     def all_are_ripe(self):
         if self._state == self.states[3]:
@@ -57,14 +57,15 @@ class TomatoBush(Tomato):
        return self.tomatoes
 
     def get_list(self):
-        print (self.tomatoes)
+        for tomat in self.tomatoes:
+            print (tomat,TomatoBush.varieties[TomatoBush.random_num])
 
 class Gardener(TomatoBush):
-    def __init__(self,name,plant):
-        self._plant = plant
+    def __init__(self,name,):
+        self._plant = self.tomatoes
 
     def work(self):
-        self._plant.grow_all()
+        self.grow_all(self._plant)
 
     def harvest(self):
         harvested = []
@@ -80,20 +81,11 @@ class Gardener(TomatoBush):
 index = int(input("введите индекс помидора:"))
 pomidor = Vegetable(index)
 print("введите вид помидора")
-print("0 - Агата \n1 - Де Барао\n2 - Бычье сердце\n3 - Сливка")
-variety = int(input())
-oneTomato = Tomato(TomatoBush.varieties[variety])
+oneTomato = Tomato(TomatoBush.varieties[TomatoBush.random_num])
 count = int(input("Введите количевство помидоров"))
 bush = TomatoBush(count,oneTomato)
 bush.making_tomatoes()
 bush.get_list()
-
-Ivan = Gardener('Ваня', oneTomato)
-print("Помогите нашему содовнику, Ване, собрать помидоры")
-func = [print(Ivan.knowledge_base()),print(Ivan.work()),print(Ivan.harvest()),"Вы отлично справились"]
-print("0 - подсказка\n1 - ростить\n2 - состояние\n3 - выход")
-action = 0
-while action != 3:
-    action = int(input("введите действие:"))
-    func[action]
-    print(func[action])
+print(oneTomato)
+Ivan = Gardener('Ваня')
+Ivan.work()
