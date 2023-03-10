@@ -21,27 +21,26 @@ class Buldings():
     def randomize(self):
         return(randint(1,1000))
     
-    def write(self):
-        self.height = int(input("Введите высоту здания:")) 
-        self.floor = int(input("Введите количевство этажей:")) 
-        self.apartments = int(input("Введите колчичевство квартир:")) 
-        self.entrances = int(input("Введите колчичевство подъездов:")) 
-        return(self.height,self.floor,self.apartments,self.entrances)
+    def write_info(self):
+        count = int(input("Введите количесвто зданий:"))
+        it = 0
+        self.bildings = []
+        
+        while it < count:
+            self.height = int(input("Введите высоту здания:")) 
+            self.floor = int(input("Введите количевство этажей:")) 
+            self.apartments = int(input("Введите колчичевство квартир:")) 
+            self.entrances = int(input("Введите колчичевство подъездов:")) 
+            lst = [self.height, self.floor, self.apartments, self.entrances,self.floor_height(), self.number_of_apartments_per_enterences(), self.number_of_apartments_per_floor(), self.randomize(), it]
+            it += 1
+            self.bildings.append(lst)
+        return(self.bildings)
+    
     
     def give_information(self):
-        return("высота здания:",self.height,"колличевстов этажей:",self.floor,"количевстов квартир:",self.apartments,"колличевство подъездов:",self.entrances) 
+        for i in self.bildings:
+            print("номер здания:", i[-1] + 1, "высота здания:", i[0], "колличевстов этажей:", i[1], "количевстов квартир:", i[2], "колличевство подъездов:", i[3], "\nвысота этажа:", i[4], "квартир в подъезде:", i[5], "квартир на этаже:", i[6],"уникальный номер:", i[6], "\n") 
         
-house = Buldings(None,None,None,None,None)
-count = int(input("Введите количесвто зданий:"))
-it = 0
-lst = []
-while it < count:
-    lst.append(house.write())
-    print(house.give_information())
-    print("высота этажа:",house.floor_height(),"метра")
-    print("колличевcтво квартир в подъезде",house.number_of_apartments_per_enterences())
-    print("колличевство квартир на этаже:",house.number_of_apartments_per_floor())
-    print("случайный номер:",house.randomize())
-    it += 1
-print(lst)
-    
+house = Buldings(None, None, None, None, None)
+house.write_info()
+house.give_information()

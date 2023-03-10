@@ -1,9 +1,9 @@
 import numpy as np
 
-lst = np.array(np.arange(-18,18).reshape(6,6),float)
-row = lst[-2:]
-lst[0].fill(0)
+array = np.array(np.arange(-18,18).reshape(6,6),float)
+row = array[-2:]
+array[0].fill(0)
 
 print(row,"\n////////////////////////////////////")
-print(lst)
-print("длинна",len(lst))
+print(array)
+print("длинна",array.size)
