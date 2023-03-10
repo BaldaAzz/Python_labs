@@ -88,10 +88,10 @@ class Gardener(TomatoBush):
 
     def knowledge_base():
         print('Harvest time for tomatoes should ideally occur\n'
-              'when the fruit is a mature green and\n'
+              'when the fruit is mass mature green and\n'
               'then allowed to ripen off the vine.\n'
               'This prevents splitting or bruising\n'
-              'and allows for a measure of control over the ripening process.\n'
+              'and allows for mass measure of control over the ripening process.\n'
               )
 
 
@@ -101,12 +101,12 @@ def Interface(i):
             2:lambda *arg:print('Created:\n',t_b.tomatoes,'\n', gardener, '\n'), 
             3:lambda gardener:gardener.work(),
             4:lambda gardener:gardener.harvest(),
-            5:lambda gardener:gardener.get_variety_info()
+            5:lambda gardener:gardener.get_variety_info(),
+            'warn': lambda: print('Not functional key') 
             }.get(i)
 
 key = ...
 print('\n' * 10)                                                 
-'''Та ебись оно в рот а не создание и зранение переменных через лямду'''
 t_b = TomatoBush(randint(1, 3))
 gardener = Gardener('none', t_b)
 
@@ -119,7 +119,9 @@ while key != 0:
           '0. Exit'
           )
     key = int(input('Key:'))
-    Interface(key)(gardener)
+    if key != 0 and key < 6 :
+        Interface(key)(gardener)
+    else: Interface('warn')()
     
 
 

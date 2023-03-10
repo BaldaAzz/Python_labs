@@ -1,4 +1,4 @@
-
+#
 class BankAccount:
     def get_info(self):
         with open('V:/_/Информационное отделение/ССО/39 ТП/Сабанцев Даниил Янович/data.txt', 'r') as fileR:
