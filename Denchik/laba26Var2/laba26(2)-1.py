@@ -7,10 +7,14 @@ import numpy as np
 
 mass = np.random.randint(-5, 4, 20)
 
+mass_more_0 = np.sum(mass > 0)
+mass_less_0 = np.sum(mass < 0)
+mass_eq_0 = np.sum(mass == 0)
+el_mass_more_0 = np.extract(mass > 0, mass)
+el_mass_less_0 = np.extract(mass < 0, mass)
+el_mass_eq_0 = np.extract(mass == 0, mass)
+
 print(mass)
-print(np.sum(mass > 0), 'положительных элементов :',
-      np.extract(mass > 0, mass))
-print(np.sum(mass < 0), 'отрицательных элементов :',
-      np.extract(mass < 0, mass))
-print(np.sum(mass == 0), 'нулевых элементов :',
-      np.extract(mass == 0, mass))
+print(mass_more_0, 'положительных элементов :',el_mass_more_0)
+print(mass_less_0, 'отрицательных элементов :',el_mass_less_0)
+print(mass_eq_0, 'нулевых элементов :',el_mass_eq_0)
