@@ -8,3 +8,15 @@ df = pd.DataFrame({
     index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  
     )
 df.index.name = 'День'
+
+workers = df.loc[df.Цена > 2000.00]
+
+sell = [1, 4, 10, 5, 1, 34, 20, 2, 15, 4 ,5, 15, 18, 4, 0]
+df['Продажи'] = sell
+df['Общая сумма'] = df['Количество'] * df['Цена']
+
+print(df.sort_values('Цена'))
+print(df)
+print(df.loc[df.Фирма == "LG"])
+print(df.loc[10])
+print(df.loc[(df.Фирма == "Samsung") & (df.Количество > 10) & (df.Количество < 20)])
