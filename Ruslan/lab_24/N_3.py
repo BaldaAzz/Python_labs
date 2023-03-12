@@ -7,7 +7,7 @@
 import numpy as np
 
 
-mass = np.array(np.arange(9))
+mass = np.arange(9)
 print(mass)
 
 matrix = mass.reshape(3, 3)

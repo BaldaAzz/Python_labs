@@ -7,7 +7,7 @@
 import numpy as np
 
 
-matrix = np.array(np.random.randint(0, 9, 9)).reshape(3, 3)
+matrix = np.random.randint(0, 9, size=(3, 3))
 
 print(matrix) 
 
