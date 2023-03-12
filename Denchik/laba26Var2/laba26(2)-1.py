@@ -8,9 +8,9 @@ import numpy as np
 mass = np.random.randint(-5, 4, 20)
 
 print(mass)
-print(np.sum(mass > 0), 'положительных элементов :',
-      np.extract(mass > 0, mass))
-print(np.sum(mass < 0), 'отрицательных элементов :',
-      np.extract(mass < 0, mass))
-print(np.sum(mass == 0), 'нулевых элементов :',
-      np.extract(mass == 0, mass))
+print(poz_count := np.sum(mass > 0), 'положительных элементов :',
+      poz_elenets := np.extract(mass > 0, mass))
+print(neg_count := np.sum(mass < 0), 'отрицательных элементов :',
+      neg_elenets := np.extract(mass < 0, mass))
+print(zero_count := np.sum(mass == 0), 'нулевых элементов :',
+      zero_elenets := np.extract(mass == 0, mass))
