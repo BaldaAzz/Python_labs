@@ -1,7 +1,9 @@
 import numpy as np
 
-lst = np.array(np.arange(-18,18).reshape(6,6),int)
-lst2 = np.prod(lst, axis = 1)
+array1 = np.array(np.arange(-18, 18).reshape(6, 6),int)
+array2 = np.prod(array1, axis=0)
+min = np.argmin(array2)
 
-print(lst2)
-print(min(lst2))
+print(array1)
+print(array2)
+print(min)

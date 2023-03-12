@@ -4,10 +4,10 @@
 Замените элементы на противоположные. 
 Определите длину двумерного массива.  '''
 
-import numpy as np 
+import numpy as np
 
 
-mass = np.array(np.random.randint(-10, 10, 42)).reshape(6, 7)
+mass = np.random.randint(-10, 10, size=(6, 7))
 
 print(mass)
 

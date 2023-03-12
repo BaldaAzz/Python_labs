@@ -1,12 +1,12 @@
 import numpy as np
 
-lst = np.array(np.arange(8),int)
+array = np.array(np.arange(8),int)
 
-print("исходный массив:",lst)
+print("исходный массив:",array)
 
-lst[1] = -8
-lst = lst.reshape(2,4)
+array[1] = -8
+array = array.reshape(2,4)
 
-print("в масиве есть 2:",2 in lst)
-print("измененный масив:",lst)
-print("строк",lst.shape[0],"\nстолбцев",lst.shape[1])
+print("в масиве есть 2:",2 in array)
+print("измененный масив:\n",array)
+print("строк",array.shape[0],"\nстолбцев",array.shape[1])

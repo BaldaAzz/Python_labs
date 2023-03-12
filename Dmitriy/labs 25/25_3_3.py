@@ -2,16 +2,17 @@ import numpy as np
 
 summ = 0
 
-lst = np.random.randint(-50, 50, 15)
-min = np.argmin(lst)
-max = np.argmax(lst)
-print(lst)
+array = np.random.randint(-50, 50, 15)
+min = np.argmin(array)
+max = np.argmax(array)
+
+print(array)
 print("индекс максимального элемента:",max ,"\nииндекс минимального элемента:", min)
 
 if max < min:
-    answer = np.sum(lst[max:min + 1]) 
+    answer = np.sum(array[max:min + 1]) 
 else:
-    answer = np.sum(lst[min:max + 1])
+    answer = np.sum(array[min:max + 1])
 
 print('Сумма:', answer)
 

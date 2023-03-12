@@ -6,7 +6,9 @@
 import numpy as np
 
 mass = np.random.randint(-15, 15, (6, 7))
-elements_modular_large = np.extract(abs(mass) > np.max(mass), mass)
+mass_max = np.max(mass)
+mass_abs = abs(mass)
+elements_modular_large = np.extract(mass_abs > mass_max, mass)
 elements_modular_large_value = elements_modular_large.size
 
 print(mass)
