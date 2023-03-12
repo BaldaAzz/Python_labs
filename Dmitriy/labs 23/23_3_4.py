@@ -1,6 +1,6 @@
 import numpy as np
 
-lst = np.array(np.arange(10).reshape(2,5),float)
-lst.fill(5)
+array = np.array(np.arange(10).reshape(2,5),float)
+array.fill(5)
 
-print(lst)
+print(array)

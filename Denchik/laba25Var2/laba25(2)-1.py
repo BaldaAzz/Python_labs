@@ -14,11 +14,13 @@ mass_sum = (mass_1 + mass_2).T
 # Матрица произведния первой и второй матрицы
 mass_multi = mass_1 * mass_2
 # Сравнение сумм матриц
-mass_sum_isbiggest = 'Больше сумма первого' if np.sum(mass_1) > np.sum(mass_2) else 'Больше сумма второго'
+mass_1_sum = np.sum(mass_1)
+mass_2_sum = np.sum(mass_2)
+mass_sum_is_largest = 'Больше сумма первого' if mass_1_sum > mass_2_sum else 'Больше сумма второго'
 
 
 print('Первый масив \n', mass_1)
 print('Второй масив \n', mass_2)
 print('Сумма \n', mass_sum)
 print('Произведение \n', mass_multi)
-print(mass_sum_isbiggest)
+print(mass_sum_is_largest)
