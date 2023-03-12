@@ -12,6 +12,6 @@ elements_modular_large = np.extract(mass_abs > mass_max, mass)
 elements_modular_large_value = elements_modular_large.size
 
 print(mass)
-print('Max element:', max_element := np.max(mass))
+print('Max element:', mass_max)
 print('Number of element(s) modular large than max:', elements_modular_large_value)
 print('Max element(s) modulo:', elements_modular_large)
