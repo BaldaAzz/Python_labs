@@ -4,11 +4,11 @@
 
 # Labs counts
 
-## Denchik  [![labs denchik](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Denchik)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik)
+## [![labs denchik](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Denchik?color=green&label=Denchik&logo=python&logoColor=green&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik)
 
-## Dmitriy  [![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
+## [![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy?color=green&label=Denchik&logo=python&logoColor=green&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
 
-## Ruslan  [![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Ruslan)](https://github.com/BaldaAzz/Python_labs/tree/main/Ruslan)
+## [![labs ruslan](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Ruslan?color=green&label=Denchik&logo=python&logoColor=green&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Ruslan)
 
 # Main 
   Ветвь отведенная для готовых файлов
