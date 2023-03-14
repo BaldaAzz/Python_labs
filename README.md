@@ -10,13 +10,13 @@
 
 ## Ruslan  [![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Ruslan)](https://github.com/BaldaAzz/Python_labs/tree/main/Ruslan)
 
-Main 
+# Main 
   Ветвь отведенная для готовых файлов
   
-Некоторые общие правила:
+## Некоторые общие правила:
 
   Не редактируем код на прямую
     Создаём ответвление и редактируем там, чтобы главный кот не помер
     Либо просто коментируем НЕ в самом коде
     
-Я всё
+# Я всё
