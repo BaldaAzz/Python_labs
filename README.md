@@ -4,7 +4,7 @@
 
 Labs counts
 
-Denchik[![labs denchik](https://img.shields.io/github/directory-file-count&label=danik/BaldaAzz/Python_labs/Denchik)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik)
+Denchik[![labs denchik](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Denchik)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik)
 
 Dmitriy[![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
 
