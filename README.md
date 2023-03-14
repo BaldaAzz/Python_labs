@@ -1,5 +1,5 @@
 # Python_labs Development
-[![Releases](https://img.shields.io/github/v/release/trbflxr/kino?include_prereleases&label=TASKS&style=for-the-badge)](https://github.com/trbflxr/kino/releases)
+[![TASKS](https://img.shields.io/github/v/release/trbflxr/kino?include_prereleases&label=TASKS&style=for-the-badge)](https://drive.google.com/drive/folders/1Azp_k1GdCND3BvPCFtL8tq_kPquRT5UE?usp=sharing)
 
 Development 
   Ветвь отведенная для файлов в этапе разработки
