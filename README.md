@@ -3,9 +3,12 @@
 ![activity](https://img.shields.io/github/commit-activity/w/BaldaAzz/Python_labs?style=for-the-badge)
 
 Labs counts
-[![labs denchik](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Denchik)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik) 
-[![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
-[![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Ruslan)](https://github.com/BaldaAzz/Python_labs/tree/main/Ruslan)
+
+Denchik[![labs denchik](https://img.shields.io/github/directory-file-count&label=danik/BaldaAzz/Python_labs/Denchik)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik)
+
+Dmitriy[![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
+
+Ruslan[![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Ruslan)](https://github.com/BaldaAzz/Python_labs/tree/main/Ruslan)
 
 Main 
   Ветвь отведенная для готовых файлов
