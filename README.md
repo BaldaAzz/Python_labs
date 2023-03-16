@@ -5,7 +5,7 @@
 # Labs counts
 
   [![labs denchik](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Denchik??color=blue&labelColor=black&label=Denchik&logo=python&logoColor=grass&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Denchik)
-  [![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy??color=blue&labelColor=black&label=Dmitriy&logo=python&logoColor=grass&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
+  [![labs dmitriy](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Dmitriy??color=blue&labelColor=black&label=Dimchik&logo=python&logoColor=grass&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Dmitriy) 
   [![labs ruslan](https://img.shields.io/github/directory-file-count/BaldaAzz/Python_labs/Ruslan??color=blue&labelColor=black&label=Ruslanchik&logo=python&logoColor=grass&style=for-the-badge)](https://github.com/BaldaAzz/Python_labs/tree/main/Ruslan)
 
 # Main 
