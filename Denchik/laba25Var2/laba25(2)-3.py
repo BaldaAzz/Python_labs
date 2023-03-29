@@ -10,13 +10,14 @@ mass = np.random.randint(0, 10, 10)
 
 print(mass)
 
-mass_min = np.argmin(mass)
-mass_max = np.argmax(mass)
-
-#подсчет произведения в приоритете от минимального до максимального
-if mass_min < mass_max:
-    sum_near = np.prod(mass[mass_min + 1: mass_max])
+if np.argmin(mass) < np.argmax(mass):
+    print(np.prod(mass[np.argmin(mass) + 1: np.argmax(mass)]))
 else:
-    sum_near = np.prod(mass[mass_max + 1: mass_min])
+    print(np.prod(mass[np.argmax(mass) + 1: np.argmin(mass)]))
     
-print(f'Произведение между макс и мин элементом:\n{sum_near}')
+""" := морж
+if np.argmin(mass) < np.argmax(mass):
+    print(minmax_prod := np.prod(mass[np.argmin(mass) + 1: np.argmax(mass)]))
+else:
+    print(minmax_prod := np.prod(mass[np.argmax(mass) + 1: np.argmin(mass)])) 
+    """
