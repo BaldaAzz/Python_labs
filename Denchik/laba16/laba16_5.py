@@ -30,16 +30,16 @@ def title(func):
 def content(func):
     def wrapper(text):
         for all in text:
-            print(' <p>\n  ', end='')
+            print('  <p>\n  ', end='')
             func(all)
-            print(' </p>')
+            print('  </p>')
     return wrapper
 
 def container(func):
     def wrapper(text):
-        print('<div>\n', end='')
+        print(' <div>\n', end='')
         func(text)
-        print('</div>')
+        print(' </div>')
     return wrapper
 
 @title
