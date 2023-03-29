@@ -6,7 +6,7 @@
 import numpy as np
 
 
-mass = np.array(np.random.randint(-10, 10, 6))
+mass = np.random.randint(-10, 10, 6)
 print(mass)
 
 mass[0] = -mass[0]

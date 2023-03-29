@@ -15,6 +15,20 @@ el_mass_less_0 = np.extract(mass < 0, mass)
 el_mass_eq_0 = np.extract(mass == 0, mass)
 
 print(mass)
-print(mass_more_0, 'положительных элементов :',el_mass_more_0)
-print(mass_less_0, 'отрицательных элементов :',el_mass_less_0)
-print(mass_eq_0, 'нулевых элементов :',el_mass_eq_0)
+print(np.sum(mass > 0), 'положительных элементов :',
+      np.extract(mass > 0, mass))
+print(np.sum(mass < 0), 'отрицательных элементов :',
+      np.extract(mass < 0, mass))
+print(np.sum(mass == 0), 'нулевых элементов :',
+      np.extract(mass == 0, mass))
+
+""" := морж
+print(mass)
+print(poz_count := np.sum(mass > 0), 'положительных элементов :',
+      poz_elenets := np.extract(mass > 0, mass))
+print(neg_count := np.sum(mass < 0), 'отрицательных элементов :',
+      neg_elenets := np.extract(mass < 0, mass))
+print(zero_count := np.sum(mass == 0), 'нулевых элементов :',
+      zero_elenets := np.extract(mass == 0, mass))
+ """
+ 

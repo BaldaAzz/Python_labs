@@ -10,4 +10,4 @@ matrix = np.random.randint(-15, 15, size=(7, 5))
 print(matrix)
 
 mass_unique = np.unique(matrix, return_counts=True)
-print(np.extract( mass_unique[1] == 1, mass_unique[0]))
+print(np.extract(mass_unique[1] == 1, mass_unique[0]))

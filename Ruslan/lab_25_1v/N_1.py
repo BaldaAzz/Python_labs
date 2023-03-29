@@ -5,20 +5,22 @@
 import numpy as np
 
 
-len_array = 9
-
-matrix_A = np.array([np.random.randint(0, 10) for i in range(len_array)]).reshape(3, 3)
-matrix_B = np.array([np.random.randint(0, 10) for i in range(len_array)]).reshape(3, 3)
+matrix_A = np.random.randint(0, 10, size=(3, 3))
+matrix_B = np.random.randint(0, 10, size=(3, 3))
 
 print(matrix_A)
 print()
 print(matrix_B)
 print('\n\n')
+
+sum_matrix = matrix_A + matrix_B
 print('Сумма матриц')
-print(matrix_A + matrix_B)
+print(sum_matrix)
 print()
+
+prod_transposed_matrices = matrix_A.T * matrix_B.T
 print('Произведение транспонированых матриц')
-print()
+print(prod_transposed_matrices)
 
 sum_matrix_A = np.sum(matrix_A)
 sum_matrix_B = np.sum(matrix_B)

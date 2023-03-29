@@ -7,10 +7,13 @@
 import numpy as np
 
 
-mass = np.array(np.random.randint(0, 10, 10))
+mass = np.random.randint(0, 10, 10)
 print(mass)
 
+summa = 0
 if np.argmin(mass) < np.argmax(mass):
-    print(np.sum(mass[np.argmin(mass) + 1  : np.argmax(mass)])) 
+    summa = np.sum(mass[np.argmin(mass) + 1: np.argmax(mass)])
 else:
-    print(np.sum(mass[np.argmax(mass) + 1  : np.argmin(mass)]))
+    summa = np.sum(mass[np.argmax(mass) + 1: np.argmin(mass)])
+
+print(summa)
