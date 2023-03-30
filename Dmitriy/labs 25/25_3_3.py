@@ -3,16 +3,16 @@ import numpy as np
 summ = 0
 
 array = np.random.randint(-50, 50, 15)
-min = np.argmin(array)
-max = np.argmax(array)
+minimum = np.argmin(array)
+maximum = np.argmax(array)
 
 print(array)
-print("индекс максимального элемента:",max ,"\nииндекс минимального элемента:", min)
+print("индекс максимального элемента:", maximum, "\nииндекс минимального элемента:", minimum)
 
-if max < min:
-    answer = np.sum(array[max:min + 1]) 
+if maximum < minimum:
+    answer = np.sum(array[maximum:minimum + 1]) 
 else:
-    answer = np.sum(array[min:max + 1])
+    answer = np.sum(array[minimum:maximum + 1])
 
 print('Сумма:', answer)
 

@@ -1,19 +1,13 @@
-import  requests
+import requests
 
-yandex =  'https://translate.yandex.by/fro=tabbar'
-vk = 'https://vk.com/dev'
-google ='http://docs.google.com/spreadshe/'
-python_scripts = 'https://python-scripts.com/reqsts'
-avagrodno = 'http://avgrodno.by/raspisanie/'
+links = {
+    'https://ru.wikipedia.org/wiki/%D0%A1%TTP#410': {'status_code': 'Uknown'},
+    'https://www.pageranker.ru/articles/troubleshooting/167--403-forbidden.htm': {'status_code': 'Uknown'},
+    'http://avgrodno.by/raspisanie/': {'status_code': 'Uknown'},
+    'https://mail.yandex.by/?uid': {'status_code': 'Uknown'}
+}
 
-links = {'https://translate.yandex.by/fro=tabbar':requests.get(yandex).status_code,
-        'https://vk.com/dev':requests.get(vk).status_code,
-        ' http://docs.google.com/spreadshe/':requests.get(google).status_code,
-        'https://python-scripts.com/reqsts':requests.get(python_scripts).status_code,
-        'http://avgrodno.by/raspisanie/':requests.get(avagrodno).status_code
-        }
-
-state = { 
+status = { 
     102 : 'Processing',
     200 : 'Ok',
     204 : 'No Content',
@@ -26,12 +20,12 @@ state = {
     521 : 'Web Server Is Down',
     522 : 'Connection Timed Out',
     524 : 'A timeout Occurred'
-    } 
-for link in links:
-    response = requests.get(link)     
-    for status in state:
-        if int(links[link]) == status:
-            print("/////////////////////\n",link, links[link], state[status],"\n//////////////////////////////////")
-            response_in_str = response.content.decode('UTF-8')
-            print(response.headers)
+} 
+
+for link in links.keys():
+    links[link]['status_code'] = requests.get(link).status_code
+    print(link, '\nстатус:', status[links[link]['status_code']], links[link]['status_code'])
+    response = requests.get(link)
+    response_in_str = response.content.decode('UTF-8')
+    print("Информация об заголовках", response.headers.keys())
             
