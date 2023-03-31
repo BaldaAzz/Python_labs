@@ -9,7 +9,7 @@
 import numpy as np
 
 
-matrix = np.random.randint(-5, 4, size=(5, 8))
+matrix = np.random.randint(-5, 5, size=(5, 8))
 print(matrix)
 
 count_positiv_nums = np.size(matrix[matrix > 0])

@@ -9,7 +9,7 @@ import numpy as np
 mass = np.random.randint(-10, 10, 6)
 print(mass)
 
-mass[0] = -mass[0]
+mass[0] = mass[-1]
 print(mass)
 
 print(5 in mass)
