@@ -12,8 +12,10 @@ def check_password(fn):
 def calculate():
     n = int(input("Введите N:"))
     i = 0
-    while i < n:
-        n += i
+    k = 0
+    while i <= n:
+        k += i
         i += 1
+    print(k)
 
 calculate()
