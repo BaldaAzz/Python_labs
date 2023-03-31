@@ -14,5 +14,5 @@ print("минимальный элемент",minimum)
 
 array[index_max_element[0][0], index_max_element[1][0]] = minimum
 array[index_min_element[0][0], index_min_element[1][0]] = maximum
-
+  
 print("изммененная матрица\n",array)

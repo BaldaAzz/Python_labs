@@ -25,7 +25,7 @@ for i in links:
         if info[j]:
             print(j,info[j])
         else:
-            print(j,"Not definded")
+            print(j,"Нет информации")
             
     text = response.content.decode('UTF-8') 
     print(response.headers) 
