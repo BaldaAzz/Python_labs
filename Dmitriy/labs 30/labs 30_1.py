@@ -23,7 +23,7 @@ df_mean.loc[('Queenstown',)]
 df_mean.loc[('Southampton', 'Second')]
 df_mean.xs('Queenstown')
 df_mean.xs(('Southampton', 'First', 'female'))
-df_mean.xs('First', level='class')
+df_mean.xs('First', level = 'class')
 df_mean.loc[('Queenstown', 'Third', 'female'):('Southampton', 'First', 'male')]
 df_mean.loc[[('Queenstown', 'Third', 'female'), ('Southampton', 'First', 'male')]]
 df_mean.loc[(['Queenstown', 'Southampton'], ['First', 'Second'], ['female', 'male'])]
@@ -33,8 +33,7 @@ df_mean.loc[pd.IndexSlice[:, 'First', :]]
 df_mean.reorder_levels(['class', 'sex', 'embark_town']).head()
 df_mean.swaplevel(0, 1).head()
 df_mean.swaplevel(0, 1).sort_index().head()
-df_mean.swaplevel(0, 1).sort_index(level='sex').head()
+df_mean.swaplevel(0, 1).sort_index(level = 'sex').head()
+
 print(mi)
 print(df)
-
-
